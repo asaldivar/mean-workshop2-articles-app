@@ -5,6 +5,7 @@
     "start": "nodemon server.js"
   },
   "dependencies": {
+    "body-parser": "^1.14.0",
     "express": "^4.13.3",
     "mongoose": "^4.1.7"
   }
