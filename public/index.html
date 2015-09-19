@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>MEAN Reddit Type App</title>
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <source src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></source>
+
+  <!-- Angular -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
+</head>
+<body ng-app="reddit">
+
+  <!-- navbar with links to states -->
+  <nav class="navbar navbar-inverse" role="navigation">
+      <div class="navbar-header">
+          <a class="navbar-brand" ui-sref="articles">Reddit-kinda App</a>
+      </div>
+      <ul class="nav navbar-nav">
+          <li><a>View all Articles</a></li>
+          <li><a>Create an Article</a></li>
+          <li><a>Favorites</a></li>
+      </ul>
+  </nav>
+
+  <!-- this is where our partials are rendered; partial entry point -->
+  <div></div>
+
+</body>
+</html>

@@ -20,8 +20,12 @@ app.use('/api', apiRouter);
 // listen to port as defined or default 3000
 var port = process.env.PORT || 3000;
 
+// serve static files
+app.use(express.static(__dirname + '/public'));
+
+// this is the entry way into the client-side
 app.get('/', function(request, response) {
-  response.json({message: 'this is json'})
+  response.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(port);
