@@ -4,16 +4,14 @@ var mongoose   = require('mongoose');
 var bodyParser = require('body-parser'); // express is an extremely minimalist framework so we need body-parser to help us handle req.body
 var apiRouter = require('./app/config/routes'); // bring in API routes
 
-// pull correct settings per environment
-var config = require('./app/config/config.js')
-var environmentSettings = config.config();
-
 // configure body-parser so we can work with request.body
 app.use(bodyParser.urlencoded({ extended: true })); // handle urleconded bodies; extended true means in any form (not just key-value pairs)
 app.use(bodyParser.json()); // only parsing json
 
+var DB = process.env.MONGOLAB_URI || 'mongodb://localhost:27017/mean-articles';
+
 // connect to DB which is on port 27017
-mongoose.connect(environmentSettings.db);
+mongoose.connect(DB);
 
 // apply router middleware
 // namespace your api
