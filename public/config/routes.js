@@ -6,25 +6,25 @@ angular.module('reddit')
 
     .state('articles', {
       url: '/',
-      template: '<h1>{{whereAmI}}</h1>',
-      controller: 'redditController'
+      templateUrl: './views/articles.html', // you can link to a view by using the property templateUrl opposed to template
+      controller: 'redditController' // connect to a controller by referring to its name
     })
 
     .state('new', {
       url: '/new',
-      template: '<h1>{{whereAmI}}</h1>',
+      templateUrl: './views/new.html',
       controller: 'newArticleController'
     })
 
     .state('article', {
       url: '/article/:id',
-      template: '<h1>{{whereAmI}}</h1>',
+      templateUrl: './views/article.html',
       controller: 'articleController'
     })
 
     .state('favorites', {
       url: '/favorites',
-      template: '<h1>{{whereAmI}}</h1>',
+      templateUrl: './views/favorites.html',
       controller: 'favoritesController'
     });
 
