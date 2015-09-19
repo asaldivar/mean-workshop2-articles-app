@@ -13,6 +13,7 @@
 
   <!-- scripts -->
   <script src="/app.js"></script>
+  <script src="/config/routes.js"></script>
 </head>
 <body ng-app="reddit">
 
@@ -22,16 +23,14 @@
           <a class="navbar-brand" ui-sref="articles">Reddit-kinda App</a>
       </div>
       <ul class="nav navbar-nav">
-          <li><a>View all Articles</a></li>
-          <li><a>Create an Article</a></li>
-          <li><a>Favorites</a></li>
+          <li><a ui-sref="articles">View all Articles</a></li>
+          <li><a ui-sref="new">Create an Article</a></li>
+          <li><a ui-sref="favorites">Favorites</a></li>
       </ul>
   </nav>
 
   <!-- this is where our partials are rendered; partial entry point -->
-  <div ng-controller="redditController">
-    {{whereAmI}}
-  </div>
+  <div ui-view></div>
 
 </body>
 </html>
