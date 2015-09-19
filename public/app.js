@@ -10,6 +10,16 @@ angular.module('reddit', ['ui.router'])
   $scope.favorite = function(article) {
     favoriteService.saveFavorite(article);
   }
+
+  $scope.plusVote = function(article) {
+    article.votes++;
+    apiService.update(article)
+  };
+
+  $scope.minusVote = function(article) {
+    article.votes--;
+    apiService.update(article)
+  };
 }])
 
 .controller('newArticleController', ['$scope', 'apiService', '$state', function($scope, apiService, $state) {

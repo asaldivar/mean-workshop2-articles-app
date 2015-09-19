@@ -12,6 +12,9 @@ angular.module('reddit')
     },
     create: function(article) {
       $http.post('/api/articles', article);
+    },
+    update: function(article) {
+      $http.patch('/api/articles/' + article._id, article);
     }
   }
 }]);
