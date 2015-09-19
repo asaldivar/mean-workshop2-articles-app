@@ -1,11 +1,15 @@
 // create angular module
 angular.module('reddit', ['ui.router'])
 
-.controller('redditController', ['$scope', 'apiService', function($scope, apiService) {
+.controller('redditController', ['$scope', 'apiService', 'favoriteService', function($scope, apiService, favoriteService) {
   apiService.index()
   .then(function(articles) {
     $scope.articles = articles;
   });
+
+  $scope.favorite = function(article) {
+    favoriteService.saveFavorite(article);
+  }
 }])
 
 .controller('newArticleController', ['$scope', 'apiService', '$state', function($scope, apiService, $state) {
@@ -20,8 +24,8 @@ angular.module('reddit', ['ui.router'])
   $scope.whereAmI = 'articleController';
 }])
 
-.controller('favoritesController', ['$scope', function($scope) {
-  $scope.whereAmI = 'favoritesController';
+.controller('favoritesController', ['$scope', 'favoriteService', function($scope, favoriteService) {
+  $scope.favorites = favoriteService.favorites
 }])
 
 .directive('panelHeader', function() {
@@ -29,5 +33,13 @@ angular.module('reddit', ['ui.router'])
     restrict: 'E',
     scope: true,
     templateUrl: '/views/panel-header.html'
+  }
+})
+
+.service('favoriteService', function() {
+  this.favorites = [];
+
+  this.saveFavorite = function(article) {
+    this.favorites.push(article)
   }
 });

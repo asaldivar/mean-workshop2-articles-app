@@ -1,9 +1,13 @@
 <div class="container">
   <h3>My Favorites</h3>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      </h4>
+  <div ng-repeat="article in favorites | orderBy:'-votes'">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+          <panel-header article="article"></panel-header>
+          <i class="fa fa-trash-o"></i>
+        </h4>
+      </div>
     </div>
   </div>
 
