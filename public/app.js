@@ -1,8 +1,11 @@
 // create angular module
 angular.module('reddit', ['ui.router'])
 
-.controller('redditController', ['$scope', function($scope) {
-  $scope.whereAmI = 'redditController';
+.controller('redditController', ['$scope', 'apiService', function($scope, apiService) {
+  apiService.index()
+  .then(function(articles) {
+    $scope.articles = articles;
+  });
 }])
 
 .controller('newArticleController', ['$scope', 'apiService', '$state', function($scope, apiService, $state) {

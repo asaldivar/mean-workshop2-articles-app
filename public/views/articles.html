@@ -1,13 +1,22 @@
 <div class="container">
   <h3>All Articles</h3>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-        <panel-header article="article"></panel-header>
-        <i class="fa fa-plus-square pull-left"></i>
-        <i class="fa fa-minus-square pull-left"></i>
-        <i class="fa fa-heart "></i>
-      </h4>
+  <div ng-repeat="article in articles">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title form-inline">
+          <a ui-sref="article({id: article._id})">
+            <h1>{{article.title}}</h1>
+            <h6>Pulished: {{article.created_at | date}}</h6>
+          </a>
+          <div class="form-group">
+            <p class="pull-right">{{article.votes}}</p>
+          </div>
+          <i class="fa fa-plus-square pull-left"></i>
+          <i class="fa fa-minus-square pull-left"></i>
+          <i class="fa fa-heart"></i>
+        </h4>
+      </div>
     </div>
   </div>
 
