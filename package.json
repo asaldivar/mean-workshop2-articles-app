@@ -1,6 +1,9 @@
 {
   "name": "mean-articles-app",
   "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
   "dependencies": {
     "express": "^4.13.3",
     "mongoose": "^4.1.7"

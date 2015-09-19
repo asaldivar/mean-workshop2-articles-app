@@ -1,2 +1,3 @@
 node_modules/*
 app/config/env.json
+npm-debug.log
