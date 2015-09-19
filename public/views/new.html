@@ -2,15 +2,15 @@
   <form>
     <div class="form-group">
       <label>Author's name</label>
-      <input type="text" class="form-control" placeholder="Author's name">
+      <input type="text" class="form-control" placeholder="Author's name" ng-model="article.author">
     </div>
     <div class="form-group">
       <label>Title</label>
-      <input type="text" class="form-control" placeholder="Title">
+      <input type="text" class="form-control" placeholder="Title" ng-model="article.title">
     </div>
     <div class="form-group">
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" ng-model="article.content"></textarea>
     </div>
-    <button type="submit" class="btn btn-default">Submit</button>
+    <button type="submit" class="btn btn-default" ng-click="createArticle()">Submit</button>
   </form>
 </div>

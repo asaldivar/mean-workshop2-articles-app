@@ -5,8 +5,12 @@ angular.module('reddit', ['ui.router'])
   $scope.whereAmI = 'redditController';
 }])
 
-.controller('newArticleController', ['$scope', function($scope) {
-  $scope.whereAmI = 'newArticleController';
+.controller('newArticleController', ['$scope', 'apiService', '$state', function($scope, apiService, $state) {
+  $scope.createArticle = function() {
+    apiService.create($scope.article);
+
+    $state.go('articles');
+  }
 }])
 
 .controller('articleController', ['$scope', function($scope) {
