@@ -12,7 +12,8 @@ app.use(bodyParser.json()); // only parsing json
 mongoose.connect('mongodb://localhost:27017/mean-articles');
 
 // apply router middleware
-app.use(apiRouter);
+// namespace your api
+app.use('/api', apiRouter);
 
 var port = 3000;
 
