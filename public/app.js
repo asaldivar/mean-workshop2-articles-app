@@ -22,4 +22,12 @@ angular.module('reddit', ['ui.router'])
 
 .controller('favoritesController', ['$scope', function($scope) {
   $scope.whereAmI = 'favoritesController';
-}]);
+}])
+
+.directive('panelHeader', function() {
+  return {
+    restrict: 'E',
+    scope: true,
+    templateUrl: '/views/panel-header.html'
+  }
+});

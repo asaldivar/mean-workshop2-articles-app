@@ -1,0 +1,8 @@
+<h4 class="panel-title form-inline">
+<a ui-sref="article({id: article._id})">
+  <h1>{{article.title}}</h1>
+  <h6>Pulished: {{article.created_at | date}}</h6>
+</a>
+<div class="form-group">
+  <p class="pull-right">{{article.votes}}</p>
+</div>
